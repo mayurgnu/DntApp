@@ -1,0 +1,19 @@
+<form #basicform="ngForm" (ngSubmit)="fnGetData(basicform.value )">
+    <input type="text" ngModel name="user" placeholder="enter user name">
+    <br/><br/>
+    <input type="text" ngModel name="email" placeholder="enter email">
+    <br/><br/>
+    <input type="password" ngModel name="password" placeholder="enter password">
+    <br/><br/>
+    <button>Register</button>
+</form>
+
+<h4>
+    <ul>
+        <li>{{mayurdata.user}}</li>
+        <li>{{mayurdata.email}}</li>
+        <li>{{mayurdata.password}}</li>
+    </ul>
+</h4>
+<button (click)="fnToggleHeading()" >Toggle Heading</button>
+<h1 *ngIf="displayHeading">Toggle Heading Effects</h1>

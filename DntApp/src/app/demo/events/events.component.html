@@ -1,0 +1,65 @@
+<div class="col-lg-12">
+    <button class="btn btn-success" (click)="fnClick(box.value)" >Click me</button>
+</div>
+<div class="row">
+    <div class="col-3">
+        <p>event binding</p>
+        <input type="text" #box (input)="fnInput(box.value)" />
+        <p>Box value is : {{displayVal}}</p>
+
+        <!-- property binding vs interolatio -->
+        <p>property binding vs interolation</p>
+        <ul>
+            <li>property binding works with all bool and alphnumeric where interolation works only on alphnumerics</li>
+        </ul>
+        <input type="text" disabled = {{disableprop}}>
+        <br><br>
+        <input type="text" [disabled]=disableprop>
+    </div>
+    <div class="col-3">
+        <a href="https://www.youtube.com/watch?v=RmNb8NENbbw&list=PL8p2I9GklV45--5t7_N4lveUI6Y31vQ6C&index=16">if else condition</a>
+        <h1 *ngIf="ifelseshow; then ifblock else elseblock"></h1>
+        <ng-template #ifblock>
+            <h1>If Block Content...</h1> 
+        </ng-template>
+        <ng-template #elseblock>
+            <h1>Else Block Content...</h1>
+        </ng-template>
+    </div>
+    <div class="col-3">
+        <a href="https://www.youtube.com/watch?v=rpl5yrt4nI4&list=PL8p2I9GklV45--5t7_N4lveUI6Y31vQ6C&index=17">else if</a>
+        <h1 *ngIf="ifelseshow; then ifblock else elseblock"></h1>
+        <ng-template [ngIf]="elseifclr==='red'">
+            <h1 style="color: red;">Red Content...</h1> 
+        </ng-template>
+        <ng-template  [ngIf]="elseifclr==='green'">
+            <h1 style="color: green;">Green Content...</h1>
+        </ng-template>
+    </div>
+    <div class="col-3">
+        <a href="https://www.youtube.com/watch?v=Hfxt0ujXmrg&list=PL8p2I9GklV45--5t7_N4lveUI6Y31vQ6C&index=18">Switch Case</a>
+        <div [ngSwitch]="switchcaseclr">
+            <h1 *ngSwitchCase="'red'" style="color: red;">Red case</h1>
+            <h1 *ngSwitchCase="'blue'" style="color: blue;">Blue case</h1>
+            <h1 *ngSwitchCase="'yellow'" style="color: yellow;">Yellow case</h1>
+            <h1 *ngSwitchDefault style="color: greenyellow;">Green Yellow case</h1>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <a href="https://www.youtube.com/watch?v=YlQ8hqNVTFc&list=PL8p2I9GklV45--5t7_N4lveUI6Y31vQ6C&index=19">Looping...</a>
+        <p *ngFor="let mayur of forSimplexArray" >Alphabet is {{mayur}}</p>
+        <p *ngFor="let mayur of forComplexArray" >{{mayur.id}} :- {{mayur.name}}</p>
+        <ul *ngFor="let i of forNestedArray">
+            <li>{{i.id}}</li>
+            <li>{{i.name}}</li>
+            <ul *ngFor="let ii of i.socialAccounts">
+                <li>{{ii}}</li>
+            </ul>
+        </ul>
+    </div>
+    <div class="col-3">
+        <p [style.color]="stylecolor"[style.backgroundColor]="styleBgcolor">Style Binding</p>
+    </div>
+</div>

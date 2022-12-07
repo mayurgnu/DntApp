@@ -1,0 +1,14 @@
+E:\Int1\DntAppApi.Infrastructure\bin\Debug\net7.0\DntAppApi.Infrastructure.deps.json
+E:\Int1\DntAppApi.Infrastructure\bin\Debug\net7.0\DntAppApi.Infrastructure.runtimeconfig.json
+E:\Int1\DntAppApi.Infrastructure\bin\Debug\net7.0\DntAppApi.Infrastructure.dll
+E:\Int1\DntAppApi.Infrastructure\bin\Debug\net7.0\DntAppApi.Infrastructure.pdb
+E:\Int1\DntAppApi.Infrastructure\obj\Debug\net7.0\DntAppApi.Infrastructure.csproj.AssemblyReference.cache
+E:\Int1\DntAppApi.Infrastructure\obj\Debug\net7.0\DntAppApi.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\Int1\DntAppApi.Infrastructure\obj\Debug\net7.0\DntAppApi.Infrastructure.AssemblyInfoInputs.cache
+E:\Int1\DntAppApi.Infrastructure\obj\Debug\net7.0\DntAppApi.Infrastructure.AssemblyInfo.cs
+E:\Int1\DntAppApi.Infrastructure\obj\Debug\net7.0\DntAppApi.Infrastructure.csproj.CoreCompileInputs.cache
+E:\Int1\DntAppApi.Infrastructure\obj\Debug\net7.0\DntAppApi.Infrastructure.dll
+E:\Int1\DntAppApi.Infrastructure\obj\Debug\net7.0\refint\DntAppApi.Infrastructure.dll
+E:\Int1\DntAppApi.Infrastructure\obj\Debug\net7.0\DntAppApi.Infrastructure.pdb
+E:\Int1\DntAppApi.Infrastructure\obj\Debug\net7.0\DntAppApi.Infrastructure.genruntimeconfig.cache
+E:\Int1\DntAppApi.Infrastructure\obj\Debug\net7.0\ref\DntAppApi.Infrastructure.dll

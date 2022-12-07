@@ -1,0 +1,10 @@
+E:\Int1\DntAppApi.Infrastructure\bin\Debug\netcoreapp3.1\DntAppApi.Infrastructure.deps.json
+E:\Int1\DntAppApi.Infrastructure\bin\Debug\netcoreapp3.1\DntAppApi.Infrastructure.dll
+E:\Int1\DntAppApi.Infrastructure\bin\Debug\netcoreapp3.1\DntAppApi.Infrastructure.pdb
+E:\Int1\DntAppApi.Infrastructure\obj\Debug\netcoreapp3.1\DntAppApi.Infrastructure.csproj.AssemblyReference.cache
+E:\Int1\DntAppApi.Infrastructure\obj\Debug\netcoreapp3.1\DntAppApi.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\Int1\DntAppApi.Infrastructure\obj\Debug\netcoreapp3.1\DntAppApi.Infrastructure.AssemblyInfoInputs.cache
+E:\Int1\DntAppApi.Infrastructure\obj\Debug\netcoreapp3.1\DntAppApi.Infrastructure.AssemblyInfo.cs
+E:\Int1\DntAppApi.Infrastructure\obj\Debug\netcoreapp3.1\DntAppApi.Infrastructure.csproj.CoreCompileInputs.cache
+E:\Int1\DntAppApi.Infrastructure\obj\Debug\netcoreapp3.1\DntAppApi.Infrastructure.dll
+E:\Int1\DntAppApi.Infrastructure\obj\Debug\netcoreapp3.1\DntAppApi.Infrastructure.pdb
