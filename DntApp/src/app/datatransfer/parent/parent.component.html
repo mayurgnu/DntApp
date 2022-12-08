@@ -1,7 +1,39 @@
 <p>parent works!</p>
-<app-child [fromparent1]="sendToChild1" [fromparent2]="sendToChild2" ></app-child>
-<button (click)="fnUpdatesendToChildValue()">Update SendToChild Value</button>
-<br><br>
-<ul *ngFor="let ii of sendtoUserChildCompnent">
-    <app-user-child [fromParntComponent]="ii"></app-user-child>
-</ul>
+<table class="table table-bordered">
+    <thead>
+        <th>Parent to Child</th>
+        <th>Parent to child in loop</th>
+        <th>Child to Parent</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <div class="col-12">
+                    <app-child [fromparent1]="sendToChild1" [fromparent2]="sendToChild2" ></app-child>
+                    <button (click)="fnUpdatesendToChildValue()">Update SendToChild Value</button>
+                </div>
+            </td>
+            <td>
+                <div class="col-12">
+                    <ul *ngFor="let ii of sendtoUserChildCompnent">
+                        <app-user-child [fromParntComponent]="ii"></app-user-child>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div class="col-12">
+                    <app-parent2child (cc)="fnparent($event)"></app-parent2child>
+                </div>
+                <span>Updated value : {{uvalue}}</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- --Send Data From Child To Parent Component
+--Create a function in parentcomp.ts file.
+--<app-child (childCompOutputVariableName)="parentComponentfunctionname($event)"></app-child>
+--parentComponentfunctionname(parameter) must be $event
+--childcomp.ts > @output childCompOutputVariableName = new EventEmitter<datatype of returning value>();
+--chilComp.html > <button (click)="childCompOutputVariableName.emit(argument you want to pass)">update data</button> -->
