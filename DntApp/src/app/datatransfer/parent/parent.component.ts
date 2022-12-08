@@ -8,6 +8,11 @@ import { Component } from '@angular/core';
 export class ParentComponent {
   sendToChild1=10;
   sendToChild2=10;
+  sendtoUserChildCompnent =[
+    {name:'ajay',email:'ajay@agmail.com'},
+    {name:'bhavin',email:'bhavin@agmail.com'},
+    {name:'chetu',email:'chetu@agmail.com'}
+]
   fnUpdatesendToChildValue()
   {
     this.sendToChild1 = Math.floor(Math.random()*10); 

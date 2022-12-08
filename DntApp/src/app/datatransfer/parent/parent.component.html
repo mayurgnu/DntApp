@@ -1,3 +1,7 @@
 <p>parent works!</p>
 <app-child [fromparent1]="sendToChild1" [fromparent2]="sendToChild2" ></app-child>
 <button (click)="fnUpdatesendToChildValue()">Update SendToChild Value</button>
+<br><br>
+<ul *ngFor="let ii of sendtoUserChildCompnent">
+    <app-user-child [fromParntComponent]="ii"></app-user-child>
+</ul>
