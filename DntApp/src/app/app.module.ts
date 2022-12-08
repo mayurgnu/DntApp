@@ -10,6 +10,7 @@ import { DemoModule } from './demo/demo.module';
 import { ProductService } from './Services/product.service';
 import { HeaderComponent } from './header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DatatransferModule } from './datatransfer/datatransfer.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     FormsModule,
     DemoModule,
-    NgbModule
+    NgbModule,
+    DatatransferModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
