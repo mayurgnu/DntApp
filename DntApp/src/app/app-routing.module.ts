@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './account/register/register.component';
 import { BasicformsComponent } from './demo/basicforms/basicforms.component';
 import { EventsComponent } from './demo/events/events.component';
+import { MaterialuiComponent } from './demo/materialui/materialui.component';
 
 const routes: Routes = [
   { path: '', component: RegisterComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'events', component: EventsComponent },
-  { path: 'basicforms', component: BasicformsComponent }
+  { path: 'basicforms', component: BasicformsComponent },
+  { path: 'materialui', component: MaterialuiComponent }
 ];
 
 @NgModule({
