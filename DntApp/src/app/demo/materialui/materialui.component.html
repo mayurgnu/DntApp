@@ -1,3 +1,14 @@
+<input type="text" #task placeholder="Enter Task">
+<br><br>
+<button mat-raised-button color="primary" (click)="fnAddTask(task.value)" >Add Task</button>
+<ul *ngFor="let ii of todolist">
+    <li>{{ii.id}} :- {{ii.name}}
+        <button  mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="fnRemoveTask(ii.id)">
+            <mat-icon></mat-icon>
+          </button>
+    </li>
+</ul>
+<br/><br/>
 <mat-slide-toggle>Toggle me!</mat-slide-toggle>
 <br/>
 <section>

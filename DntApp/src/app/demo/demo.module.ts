@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -25,7 +26,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatButtonModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatIconModule
   ]
 })
 export class DemoModule { }

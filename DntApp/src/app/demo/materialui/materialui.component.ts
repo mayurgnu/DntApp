@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
 @Component({
@@ -8,5 +7,13 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
   styleUrls: ['./materialui.component.css']
 })
 export class MaterialuiComponent {
-
+  todolist:any[]=[];
+  fnAddTask(val:any){
+    this.todolist.push({id:this.todolist.length,name:val})
+    console.log(this.todolist);
+  }
+  fnRemoveTask(id:any){
+    this.todolist = this.todolist.filter(item=>item.id!==id);
+    console.log(this.todolist);
+  }
 }
