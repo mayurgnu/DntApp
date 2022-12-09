@@ -4,10 +4,18 @@
     
     <ul>
         <li><a [routerLink]="['register']">Register</a></li>
-        <li><a [routerLink]="['events']">Events</a></li>
+        <!-- In below link param3007 is querystring parameter name -->
+        <li><a [routerLink]="['events/:param3007']">Events</a></li>
         <li><a [routerLink]="['basicforms']">Basic forms</a></li>
         <li><a [routerLink]="['materialui']">Material Ui</a></li>
         <li><a [routerLink]="['datatransfer']">Data Transfer</a></li>
         <li><a [routerLink]="['forms']">Forms</a></li>
+        <!-- In below link 3007 is querystring parameter value
+        which will be fethc in event component.ts files as following
+        constructor(private route3007:ActivatedRoute){}
+        ngOnInit(): void {
+            this.querystringparam=this.route3007.snapshot.paramMap.get('param3007')
+        }-->
+        <li><a [routerLink]="['events/3007']">Go to events</a></li>
     </ul>
 </nav>

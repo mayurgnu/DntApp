@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-events',
@@ -7,7 +8,12 @@ import { Component, NgModule } from '@angular/core';
   styles: [
   ]
 })
-export class EventsComponent {
+export class EventsComponent implements OnInit {
+  querystringparam:any='';
+  constructor(private route3007:ActivatedRoute){}
+  ngOnInit(): void {
+    this.querystringparam=this.route3007.snapshot.paramMap.get('param3007')
+  } 
   displayVal='';
   disableprop = false;
   ifelseshow=true;
