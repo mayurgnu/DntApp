@@ -5,6 +5,7 @@ import { ParentComponent } from './datatransfer/parent/parent.component';
 import { BasicformsComponent } from './demo/basicforms/basicforms.component';
 import { EventsComponent } from './demo/events/events.component';
 import { MaterialuiComponent } from './demo/materialui/materialui.component';
+import { PageNotFound404Component } from './errormodule/page-not-found404/page-not-found404.component';
 import { DemoformComponent } from './formtutorial/demoform/demoform.component';
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'basicforms', component: BasicformsComponent },
   { path: 'materialui', component: MaterialuiComponent },
   { path: 'datatransfer', component: ParentComponent },
-  { path: 'forms', component: DemoformComponent }
+  { path: 'forms', component: DemoformComponent },
+  { path: '**', component: PageNotFound404Component }
 ];
 
 @NgModule({
