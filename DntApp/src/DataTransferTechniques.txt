@@ -1,0 +1,47 @@
+NOTE : For ParentComponent = PC & ChildComponent = CC
+======================================================
+A).Send Data From Parent To Child.
+==================================
+--we use child component selector in parent component html file like this <app-child></app-child> in PC.html
+1).create a single variable in parent component file.
+   for ex:  sendToChild1=10;sendToChild1=20;
+2).Now to map sendToChild1 variable value we need an input variable in child component as following. 
+   ex:  @Input() fromparent1 = 0;  @Input() fromparent2 = 0;
+3).send that [PC]sendToChild1 variable in child component's input [CC]fromparent1 variable  as following
+   <app-child [fromparent1]="sendToChild1" [fromparent2]="sendToChild2" ></app-child>
+4).Can be used in parent component file as following.
+    PC.html : <button (click)="fnUpdatesendToChildValue()">Update SendToChild Value</button>
+    PC.ts : fnUpdatesendToChildValue(){
+        this.sendToChild1 = Math.floor(Math.random()*10); 
+    }
+summary :
+PC > sendToChild1=10;
+CC > @Input() fromparent1 = 0;
+PC.html > <app-child [fromparent1]="sendToChild1"></app-child>
+==================================
+B).Send Data From Child To Parent.
+==================================
+--we use child component selector in parent component html file like this <app-parent2child></app-parent2child> in PC.html
+1).Create an output variable in child component as following.
+    ex:  @Output() childOutPutVariable = new EventEmitter<any>();
+2).Send that output variable from child component to parent component as following.
+    <app-parent2child (childOutPutVariable)="fnGetchildOutPutVariableInParentComponent($event)"></app-parent2child>
+3).We can use as following in parent component as following.
+    fnGetchildOutPutVariableInParentComponent(val:any){
+        this.normalVariable = val;
+    }
+4).We need to emit @Output() childOutPutVariable from CC.html > PP.ts function fnGetchildOutPutVariableInParentComponent(val:any) 
+    <input type="text" #box />
+    <button (click)="childOutPutVariable.emit(box.value)">Update data</button>
+summary :
+CC.ts > @Output() childOutPutVariable = new EventEmitter<any>();
+PC.html > <app-parent2child (childOutPutVariable)="fnGetchildOutPutVariableInParentComponent($event)"></app-parent2child>
+PC.ts > fnGetchildOutPutVariableInParentComponent(val:any){
+            this.normalVariable = val;
+        }
+CC.html > <input type="text" #box />
+          <button (click)="childOutPutVariable.emit(box.value)">Update data</button>
+
+
+
+

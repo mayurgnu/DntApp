@@ -4,3 +4,6 @@ body {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+table tr td span{font-weight:bold;}
+table tr td { width: 25%; }
+table tr td span::after{content: "\a";white-space: pre;}

@@ -1,39 +1,142 @@
 <p>parent works!</p>
-<table class="table table-bordered">
-    <thead>
-        <th>Parent to Child</th>
-        <th>Parent to child in loop</th>
-        <th>Child to Parent</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <div class="col-12">
-                    <app-child [fromparent1]="sendToChild1" [fromparent2]="sendToChild2" ></app-child>
-                    <button (click)="fnUpdatesendToChildValue()">Update SendToChild Value</button>
-                </div>
-            </td>
-            <td>
-                <div class="col-12">
-                    <ul *ngFor="let ii of sendtoUserChildCompnent">
-                        <app-user-child [fromParntComponent]="ii"></app-user-child>
+<mat-tab-group [selectedIndex]="2">
+    <mat-tab label="Data Transfer Techniques"> 
+        <table class="table table-bordered">
+            <thead>
+                <th>Parent to Child</th>
+                <th>Parent to child in loop</th>
+                <th>Child to Parent</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="col-12">
+                            <app-child [fromparent1]="sendToChild1" [fromparent2]="sendToChild2" ></app-child>
+                            <button (click)="fnUpdatesendToChildValue()">Update SendToChild Value</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-12">
+                            <ul *ngFor="let ii of sendtoUserChildCompnent">
+                                <app-user-child [fromParntComponent]="ii"></app-user-child>
+                            </ul>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-12">
+                            <app-parent2child (childOutPutVariable)="fnGetchildOutPutVariableInParentComponent($event)"></app-parent2child>
+                        </div>
+                        <span>Updated value : {{normalVariable}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </mat-tab>
+    <mat-tab label="Two way Binding"> 
+        <table class="table table-bordered">
+            <thead>
+                <th>Two way Binding</th>
+                <th>Template Reference Variable</th>
+                <th>TypeScript Define Two Types Example</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <h4>modifing and displaying property value at same time called as two way binding.</h4>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Two way bind</mat-label>
+                            <input matInput placeholder="Two way bind" [(ngModel)]="mayur">
+                        </mat-form-field>
+                        <h4>{{mayur}}</h4>
+                    </td>
+                    <td>
+                        <h4>Assigning and html element with id ex: #box in input element is called template reference variable</h4>
+                        <input type="text" #box/>
+                        <button mat-raised-button color="primary" (click)="fnGetData(box)">Get Data</button>
+                        <h4>{{templaterefvariablevalue}}</h4>
+                    </td>
+                    <td>
+                        <h4>Supported Types</h4>
+                        <ul>
+                            <li>number</li>
+                            <li>string</li>
+                            <li>boolean</li>
+                            <li>any</li>
+                            <li>define 2 types</li>
+                        </ul>
+                        <button mat-raised-button color="primary" (click)="fnTypeScriptDataBasedOnTypes()">Get Data</button>
+                        <h4>this.fnGetNumberOrString(10) : {{val1}}</h4>
+                        <h4>this.fnGetNumberOrString('mayur') : {{val2}}</h4>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </mat-tab>
+<mat-tab label="Third"> 
+    <table class="table table-bordered">
+        <thead>
+            <th>Pipes</th>
+            <th>Pipes with params</th>
+            <th>Custom Pipes</th>
+            <th>Advanced Pipes</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <ul>
+                        <li><span>Regular :</span>{{pipevariable}}</li>
+                        <li><span>Uppercase :</span>{{pipevariable | uppercase}}</li>
+                        <li><span>Lowercase :</span> {{pipevariable | lowercase}}</li>
+                        <li><span>Date :</span> {{pipevariabledate | date}}</li>
+                        <li><span>Full Date :</span> {{pipevariabledate | date : 'fullDate'}}</li>
+                        <li><span>Uppercase using function :</span> {{fnUpperCase('mayur patel')}}</li>
                     </ul>
-                </div>
-            </td>
-            <td>
-                <div class="col-12">
-                    <app-parent2child (cc)="fnparent($event)"></app-parent2child>
-                </div>
-                <span>Updated value : {{uvalue}}</span>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
+                </td>
+                <td>
+                    <ul>
+                        <li><span>We can pass params in Pipes like this ['12345678' | slice :3:6]</span>{{'12345678' | slice :3:6}}</li>
+                        <li><span>JsonObj without josn pipe</span>{{jsonObj}}</li>
+                        <li><span>JsonObj with josn pipe</span>{{jsonObj | json}}</li>
+                        <li><span>[2000.300000 | number : '2.2-3']</span>{{2000.300000 | number : '2.2-3'}}</li>
+                        <li><span>[000002.00003 | number : '2.2-3']</span>{{000002.00003 | number : '2.2-3'}}</li>
+                        <li><span>[2.3 | number : '2.2-3']</span>{{2.3 | number : '2.2-3'}}</li>
+                        <li><span>Currancy Pipes</span>{{2.3 | currency:'USD'}} ||| {{2.3 | currency:'GBP'}}</li>
+                    </ul>                    
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            <span>pipes must be in seprate folder in app folder</span>
+                            <p>execute <br> <b>ng g p mypipes/USDTOINR</b> command in cli,it will create my pipes folder and
+                                inside there our custom USDTOINR pipe will be created.
+                            </p>
+                        </li>
+                        <li>
+                            <span>Angular cli Command To generate custom pipe</span>ng g p USDTOINR,<br> 
+                            where USDTOINR is pipe name.
+                        </li>
+                        <li><span>Regular custom pipe :</span>{{20 | uSDTOINR}}</li>
+                        <li><span>Custom pipe with single param :</span>{{20 | uSDTOINR:70}}</li>
+                        <li><span>Pipe with multiple param :</span>{{'mayur' | mergestr:3007:'patel':'m@m.com'}}</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</mat-tab>
+<mat-tab label="Fourth"> Content 4 </mat-tab>
+<mat-tab label="Fifth"> Content 5 </mat-tab>
+</mat-tab-group>
 
 <!-- --Send Data From Child To Parent Component
---Create a function in parentcomp.ts file.
---<app-child (childCompOutputVariableName)="parentComponentfunctionname($event)"></app-child>
---parentComponentfunctionname(parameter) must be $event
---childcomp.ts > @output childCompOutputVariableName = new EventEmitter<datatype of returning value>();
---chilComp.html > <button (click)="childCompOutputVariableName.emit(argument you want to pass)">update data</button> -->
+--1).childcomp.ts > create @output childCompOutputVariableName = new EventEmitter<datatype of returning value>();
+
+--2).chilComp.html > emit that output function variable wherever u want as following
+     <button (click)="childCompOutputVariableName.emit(argument you want to pass)">update data</button>.
+
+--3).Use that childCompOutputVariableName inside child-compnent-selector as following
+     <app-child (childCompOutputVariableName)="fnGetchildOutPutVariableInParentComponent($event)"></app-child>
+
+--4).Create a function in parentcomp.ts file in which you can get data from child component.
+    fnGetchildOutPutVariableInParentComponent.
+    --parentComponentfunctionname(parameter) must be $event -->
