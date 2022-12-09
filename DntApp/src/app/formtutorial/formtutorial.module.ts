@@ -7,12 +7,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
+import { RedElDirective } from '../mydirectives/red-el.directive';
 
 
 
 @NgModule({
   declarations: [
-    DemoformComponent
+    DemoformComponent,
+    RedElDirective
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ]
 })
 export class FormtutorialModule { }

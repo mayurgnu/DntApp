@@ -16,7 +16,7 @@ import { FormtutorialModule } from './formtutorial/formtutorial.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
