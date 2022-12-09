@@ -11,6 +11,7 @@ import { ProductService } from './Services/product.service';
 import { HeaderComponent } from './header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DatatransferModule } from './datatransfer/datatransfer.module';
+import { FormtutorialModule } from './formtutorial/formtutorial.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DatatransferModule } from './datatransfer/datatransfer.module';
     FormsModule,
     DemoModule,
     NgbModule,
-    DatatransferModule
+    DatatransferModule,
+    FormtutorialModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

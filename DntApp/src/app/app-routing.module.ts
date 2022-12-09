@@ -5,6 +5,7 @@ import { ParentComponent } from './datatransfer/parent/parent.component';
 import { BasicformsComponent } from './demo/basicforms/basicforms.component';
 import { EventsComponent } from './demo/events/events.component';
 import { MaterialuiComponent } from './demo/materialui/materialui.component';
+import { DemoformComponent } from './formtutorial/demoform/demoform.component';
 
 const routes: Routes = [
   { path: '', component: RegisterComponent },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'events', component: EventsComponent },
   { path: 'basicforms', component: BasicformsComponent },
   { path: 'materialui', component: MaterialuiComponent },
-  { path: 'datatransfer', component: ParentComponent }
+  { path: 'datatransfer', component: ParentComponent },
+  { path: 'forms', component: DemoformComponent }
 ];
 
 @NgModule({

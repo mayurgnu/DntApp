@@ -1,0 +1,24 @@
+    <mat-tab-group [selectedIndex]="0">
+        <mat-tab label="Template Driven Forms"> 
+            <!-- <form #loginform="ngForm" class="example-form" (ngSubmit)="fnSubmit(loginform.value)"> -->
+            <form #loginform="ngForm" class="example-form" (ngSubmit)="fnSubmit(loginform.controls)">
+                <mat-form-field class="example-full-width">
+                    <input ngModel matInput placeholder="Username" name="username"
+                    required #username="ngModel" pattern="[a-zA-z]+$"/>
+                    <span *ngIf="username.invalid && username.touched">Please enter valid username</span>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input ngModel matInput placeholder="Email" name="email"
+                    required #email="ngModel" email/>
+                    <span *ngIf="email.invalid && email.touched">Please enter valid email address</span>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input ngModel type="password" minlength="2" matInput placeholder="Password" name="password"
+                    required #password="ngModel" />
+                    <span *ngIf="password.invalid && password.touched">Please enter valid password</span>
+                </mat-form-field>
+                <button [disabled]="loginform.invalid" mat-raised-button color="primary">Submit</button>
+            </form>
+        </mat-tab>
+        <mat-tab label="Reactive Forms"></mat-tab>
+</mat-tab-group>
