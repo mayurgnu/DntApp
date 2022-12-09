@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule,FormGroup,FormControl } from '@angular/forms';
 import { DemoformComponent } from './demoform/demoform.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -21,7 +21,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatTabsModule,
     MatInputModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
   ]
 })
 export class FormtutorialModule { }
