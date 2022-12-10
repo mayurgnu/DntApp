@@ -1,0 +1,29 @@
+<h4>Query string param value is :- {{querystringparam}}</h4>
+<mat-tab-group [selectedIndex]="0">
+    <mat-tab label="Child Route"> 
+        <table class="table table-bordered">
+            <thead>
+                <th>Child Route </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a [routerLink]="['careers']">Career</a>
+                    </td>
+                    <td>
+                        <a [routerLink]="['aboutus']">Aboutus</a>
+                    </td>
+                    <td>
+                        <a [routerLink]="['contactus']">Contactus</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <h5>Child route component will be loaded here...</h5>
+                        <router-outlet></router-outlet>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </mat-tab>
+</mat-tab-group>

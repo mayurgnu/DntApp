@@ -10,12 +10,14 @@
         <li><a [routerLink]="['materialui']">Material Ui</a></li>
         <li><a [routerLink]="['datatransfer']">Data Transfer</a></li>
         <li><a [routerLink]="['forms']">Forms</a></li>
+        <li><a [routerLink]="['route']">Route</a></li>
+        <li><a [routerLink]="['route/:param3007']">Route</a></li>
         <!-- In below link 3007 is querystring parameter value
-        which will be fethc in event component.ts files as following
+        which will be fethc in route component.ts files as following
         constructor(private route3007:ActivatedRoute){}
         ngOnInit(): void {
             this.querystringparam=this.route3007.snapshot.paramMap.get('param3007')
         }-->
-        <li><a [routerLink]="['events/3007']">Go to events</a></li>
+        <li><a [routerLink]="['route/3007']">Go to route</a></li>
     </ul>
 </nav>

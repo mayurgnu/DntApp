@@ -7,15 +7,27 @@ import { EventsComponent } from './demo/events/events.component';
 import { MaterialuiComponent } from './demo/materialui/materialui.component';
 import { PageNotFound404Component } from './errormodule/page-not-found404/page-not-found404.component';
 import { DemoformComponent } from './formtutorial/demoform/demoform.component';
+import { AboutusComponent } from './routemodule/aboutus/aboutus.component';
+import { CareersComponent } from './routemodule/careers/careers.component';
+import { ContactusComponent } from './routemodule/contactus/contactus.component';
+import { RoutetutorialComponent } from './routemodule/routetutorial/routetutorial.component';
 
 const routes: Routes = [
-  { path: '', component: RegisterComponent },
+  { path: '', component: RoutetutorialComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'events/:param3007', component: EventsComponent },
+  { path: 'events', component: EventsComponent },
   { path: 'basicforms', component: BasicformsComponent },
   { path: 'materialui', component: MaterialuiComponent },
   { path: 'datatransfer', component: ParentComponent },
   { path: 'forms', component: DemoformComponent },
+  { path: 'route', component: RoutetutorialComponent},
+  { path: 'route/:param3007', component: RoutetutorialComponent,
+    children:[
+      { path: 'contactus', component: ContactusComponent},
+      { path: 'careers', component: CareersComponent},
+      { path: 'aboutus', component: AboutusComponent}
+    ]
+   },
   { path: '**', component: PageNotFound404Component }
 ];
 
