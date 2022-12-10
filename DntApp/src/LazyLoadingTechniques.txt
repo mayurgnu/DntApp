@@ -1,0 +1,44 @@
+1).make a module.
+2).make two components in that module
+3).use module in lazy loading way
+4).Make Routing.
+5).Make Routing Link.
+Step by step:-
+==============
+1).ng g m admin --routing
+    //will generate two files 1).admin.module.ts & 2).admin.routing.module.ts files.
+2).cretae two components in admin module
+    i). ng g c admin/login 
+    ii).ng g c admin/list
+3).In admin.routing.module.ts file add routes for above two components as following.
+    const routes: Routes = [
+        { path : 'login', component:LoginComponent },
+        { path : 'list', component:ListComponent },
+    ];
+4).follow above 3 steps and cretae UserModule and all its component
+5).Define import admin module in lazy loading way path  in main app.routing.module.ts file as following
+    const routes: Routes = [
+        { path : 'admin', loadChildren:()=>import('./admin/admin.module')
+            .then(mode=>mode.AdminModule)
+        },
+        { path : 'user', loadChildren:()=>import('./user/user.module')
+            .then(mode=>mode.UserModule)
+        }
+    ];
+6).cretae router Link for above two admin/login and admin.list components in 
+    any component.html file where you want as following.
+    <h3>Admin links</h3>
+    <li><a [routerLink]="['admin/login']">Login</a></li>
+    <li><a [routerLink]="['admin/list']">List</a></li>
+    
+    <h3>Admin links</h3>
+    <li><a [routerLink]="['user/login']">Login</a></li>
+    <li><a [routerLink]="['user/list']">List</a></li>
+    <router-outlet></router-outlet>
+7).to confirm this admin module lazy loaded or not?
+    put a console.log('admin module loaded') in admin.module.ts file.
+    if its not lazily loaded log will be there in console on first load only
+    other wise it will be there after admin module loaded.
+NOTE.MOST IMPORTANT
+    when loading any module lazily 
+    never import [modulename].routing.module.ts file any where if its not required.

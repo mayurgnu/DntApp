@@ -13,7 +13,7 @@ import { ContactusComponent } from './routemodule/contactus/contactus.component'
 import { RoutetutorialComponent } from './routemodule/routetutorial/routetutorial.component';
 
 const routes: Routes = [
-  { path: '', component: RoutetutorialComponent },
+  { path: '', component: ParentComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'events', component: EventsComponent },
   { path: 'basicforms', component: BasicformsComponent },
@@ -28,7 +28,14 @@ const routes: Routes = [
       { path: 'aboutus', component: AboutusComponent}
     ]
    },
-  { path: '**', component: PageNotFound404Component }
+  { path : 'LazyLoadUser', loadChildren:()=>import('./userlazyloadingmodule/userlazyloadingmodule.module')
+      .then(mode=>mode.UserlazyloadingmoduleModule)
+  },
+  { path : 'LazyLoadAdmin', loadChildren:()=>import('./adminlazyloadingmodule/adminlazyloadingmodule.module')
+      .then(mode=>mode.AdminlazyloadingmoduleModule)
+  },
+  { path: '**', component: PageNotFound404Component }  
+  //NOTE : This type of route(wildcard routes) must be at last. 
 ];
 
 @NgModule({
