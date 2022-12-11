@@ -34,6 +34,9 @@ const routes: Routes = [
   { path : 'LazyLoadAdmin', loadChildren:()=>import('./adminlazyloadingmodule/adminlazyloadingmodule.module')
       .then(mode=>mode.AdminlazyloadingmoduleModule)
   },
+  { path : 'LazyLoadAdmin', loadChildren:()=>import('./adminlazyloadingmodule/adminlazyloadingmodule.module')
+      .then(mode=>mode.AdminlazyloadingmoduleModule)
+  },
   { path: '**', component: PageNotFound404Component }  
   //NOTE : This type of route(wildcard routes) must be at last. 
 ];

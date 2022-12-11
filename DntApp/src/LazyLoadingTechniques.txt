@@ -42,3 +42,35 @@ Step by step:-
 NOTE.MOST IMPORTANT
     when loading any module lazily 
     never import [modulename].routing.module.ts file any where if its not required.
+=======================================================================================
+Lazy load component
+=======================================================================================
+1).make two components.
+2).make two buttons to load those components.
+3).Write function to load those components.
+Step by step:-
+==============
+1).import {viewContainerRef,ComponentFactoryResolver} from '@angular/core'
+2).in respective component.ts file
+    constructor(private viewContainer:ViewContainerRef,private cfr:ComponentFactoryResolver)
+    i).ViewContainerRef  will create container in which dynaic component can be loaded.
+    ii).ComponentFactoryResolver will convert dynamic code in to component.
+3).Create a button in respective component.html file to load component lazily 
+    <button (click)="fnLoadLazyLoadComponent()" >Load Lazy Load Component</button>
+4).and implement that function in respective component.ts file as following.
+    export class LazyloadcontainerComponent {
+        constructor(private viewContainerRef:ViewContainerRef){}
+            async fnLoadLazyLoadComponent(){
+            this.viewContainerRef.clear();
+            const {LazyloadcomponentComponent} = await import('src/app/lazyloadcomponent/lazyloadcomponent.component');
+            this.viewContainerRef.createComponent(LazyloadcomponentComponent);
+        }
+    }
+5).to confirm this Lazyloadcomponent Component lazy loaded or not?
+    put a console.log('console.log('src/app/lazyloadcomponent/lazyloadcomponent.component') in admin.module.ts file.
+    if its not lazily loaded log will be there in console on first load only
+    other wise it will be there after Lazyloadcomponent Lazily loaded.
+
+NOTE.MOST IMPORTANT
+    when loading any component lazily never import that component in any file if its not required.
+    it must be lazily loaded as explained above.

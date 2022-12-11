@@ -17,7 +17,7 @@ import { RoutemoduleModule } from './routemodule/routemodule.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
