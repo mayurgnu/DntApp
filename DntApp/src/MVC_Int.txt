@@ -1,0 +1,31 @@
+MVC Pipeline Request Lifecycle
+===============================
+1).Request
+2). > Routing [Url Roting Module, MVC Route Handler, MVC HttpHandler]
+3). > Controller Initialization [ControllerFactory Activator]
+4). > Action Execution [Modelbinding, Action FIlters, Action Result]
+5). > Result Execution [Result Executing, Invoke Action Result]
+6). > View Engine [Find and render view]
+7). > Result Execution [Result ExecutED]
+8). > Response
+
+MVC filters
+==============
+Operates on the result which is returned by an action
+Filter Type	Description	Built-in Filter	Interface
+1).Authorization filters	
+	--Performs authentication and authorizes before executing an action method.	
+	--[Authorize], [RequireHttps]	IAuthorizationFilter
+
+2).Action filters	
+	--Performs some operation before and after an action method executes.	
+	--IActionFilter
+
+3).Result filters	
+	--Performs some operation before or after the execution of the view.	
+	--[OutputCache]	IResultFilter
+	
+3).Exception filters	
+	--Performs some operation if there is an unhandled exception 
+		thrown during the execution of the ASP.NET MVC pipeline.	
+	--[HandleError]	IExceptionFilter
