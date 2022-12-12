@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/DntAppApi/.vs/
+/DntAppApi/bin/
+/DntAppApi/obj/
+/DntAppApi.Infrastructure/bin/
+/DntAppApi.Infrastructure/obj/
