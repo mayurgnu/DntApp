@@ -1,0 +1,21 @@
+employee table : empid,empname,deptid,age
+department table : deptid,deptname
+
+
+Select E.empid,E.empname,D.deptname
+from Employee E
+LEFT JOIN Department D On D.deptid = E.deptid
+
+EXEC GetData 50
+CREATE OR ALETR PROC GetData
+@age int,
+As
+BEGIN
+Select E.deptid , count(1) as EmployeCnt,D.deptname
+from Employee E
+LEFT JOIN Department D On D.deptid = E.deptid
+Where E.age > @age
+Group by E.deptid,D.deptname
+Having count(1) > 5
+END
+

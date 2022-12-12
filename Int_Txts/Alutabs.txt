@@ -1,0 +1,52 @@
+public class Program
+{
+	static Program(){
+		 Console.WriteLine("hello static");
+	}
+	
+	public Program(string message){
+		Console.WriteLine("Hello "+message);
+	}
+	public static void Main()
+	{
+		Console.WriteLine("Hello World");
+		var p=new Program("Abhijeet");
+		var t=new Program("Tom");
+	}
+}
+
+hello static
+Hello World
+Hello Abhijeet
+Hello Tom
+
+public static class demo
+{
+	public static string foramatdecimal(this string param,anytype anyparams)
+	{
+		service.singleton<iuser,user>();
+	}
+}
+Employee id,e.empname,managerid
+
+--Select id,e.empname as employyename,m.empname as ManagerName
+--From Employee E
+--INNER JOIN Employee M On E.Id = M.ManagerId
+DECLARE @Tbl table(
+	id int,
+	[name] varchar(50),
+	managerid int
+)
+insert into @Tbl select 1,'ajay',null
+insert into @Tbl select 2,'bhavin',3
+insert into @Tbl select 3,'chetan',4
+insert into @Tbl select 4,'dipak',3
+insert into @Tbl select 5,'elgar',2
+insert into @Tbl select 6,'geeta',1
+
+Select E.id,e.name as Employeename,
+	(CASE WHEN E.managerid is null THEN 'CEO'
+		  WHEN m.managerid is null THEN 'No Nanager'
+		  ELSE M.name END) as ManagerName
+From @Tbl E
+LEFT JOIN @Tbl M On E.Id = M.ManagerId

@@ -1,0 +1,111 @@
+https://nodejs.org/
+Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;
+C:\Program Files\Microsoft SQL Server\150\Setup Bootstrap\Log\20221128_225112
+C:\Users\HP 840 G5\.nuget\packages
+
+===============Full line================ 
+Scaffold-DbContext "data source=DESKTOP-4VG8BV2\SQLEXPRESS; initial catalog=MP;Integrated Security=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir      Entities  -F
+===============Break Line==================
+Scaffold-DbContext "data source=localhost\SQLEXPRESS; initial catalog=MP;Integrated Security=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Entities -F
+dotnet ef dbcontext scaffold "data source=localhost\SQLEXPRESS; initial catalog=MP;Integrated Security=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Entities -F
+Incaseof error The term 'Scaffold-DbContext' is not recognized as the name of a cmdle
+Install-Package Microsoft.EntityFrameworkCore.Tools
+Install from nuget also Microsoft.EntityFrameworkCore.Design
+Scaffold-DbContext  A connection was successfully established with the server, but then an error occurred during the login process. scafold dbcontext
+Scaffold-DbContext 'data source=localhost\SQLEXPRESS;initial catalog=MP;Integrated Security=true;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;' Microsoft.EntityFrameworkCore.SqlServer -OutputDir Entities -F
+=========================final command==========================================================================================
+Scaffold-DbContext 'data source=localhost\SQLEXPRESS;initial catalog=MP;Integrated Security=true;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;' Microsoft.EntityFrameworkCore.SqlServer -OutputDir Entities -F
+=============================================================================================================================
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+PS E:\Int1> Set-ExecutionPolicy RemoteSigned
+=============================================================================================================================
+difference between left , ntural, equi join
+mvc pipline concept.
+mvc filter execution flow.
+web api autentication if token stolen from secure cookie by hacker ?
+diff between mvc and webapirouting
+web api vesrioning strategies
+modeldriven forms
+handle div horizontal & vertical scroll issue
+=============================================================================================================================
+cd ../../../
+
+ ng g c register -s --spec false
+ depriciated to
+ ng g c register -s --skip-tests true
+ 
+ 192.168.115.11
+ while running issue not work use bwlow command
+ ng serve --port 8080 --host 0.0.0.0
+ ==========================================================================================================================
+ The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. 
+ Configure the CORS policy by listing individual origins if credentials needs to be supported
+Solution
+services.AddCors(options =>
+{
+	options.AddPolicy("CorsPolicy",
+		builder => builder.AllowAnyOrigin()
+			.AllowAnyMethod()
+			.AllowAnyHeader());
+});
+=============================================================================================================================
+ng --help
+================================================
+crbug/1173575, non-JS module files deprecated.
+npm start
+Google chrome >  Dev Tools > Preferences > Click on Restore defaults and Reload Button
+================================================================================================================================
+Scaffold-DbContext 'data source=localhost\SQLEXPRESS;initial catalog=DNT;Integrated Security=true;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;' Microsoft.EntityFrameworkCore.SqlServer -OutputDir Entities -F
+===========================================================================================================
+https://ng-bootstrap.github.io/#/home
+ng add @ng-bootstrap/ng-bootstrap
+npm uninstall bootstrap --no-save
+
+
+it will make change in following files.
+UPDATE package.json 
+UPDATE src/app/app.module.ts (905 bytes)
+UPDATE angular.json (2768 bytes)
+UPDATE tsconfig.json (949 bytes)
+UPDATE tsconfig.app.json (294 bytes)
+UPDATE tsconfig.spec.json (300 bytes)
+===========================================================================================================
+git init : to root folder off prooject from cmdle
+git status : to check modification we have did.
+git add file-name : for single file add (ex: git add mayur.txt)
+git add . : to add all files of selected folder.
+git commit -m "My first commit"
+======================================================================
+Author identity unknown
+*** Please tell me who you are.
+Run
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+fatal: unable to auto-detect email address (got 'HP 840 G5@DESKTOP-T908QMU.(none)')
+--Now this will work.
+git commit -m "My first commit"
+========================================================================================
+git remote add origin https://github.com/mayurgnu/DntApp.git
+git push -u origin master
+=============================================================================================
+ng add @angular/material
+when termianal asks Would you like to proceed?
+(Y/n) : Capital Y means recomended Yes
+(y/N) : Capital Y means recomended No
+===================================================================================
+--Send Data From Child To Parent Component
+--Create a function in parentcomp.ts file.
+--<app-child (childCompOutputVariableName)="parentComponentfunctionname($event)"></app-child>
+--parentComponentfunctionname(parameter) must be $event
+--childcomp.ts > @output childCompOutputVariableName = new EventEmitter<datatype of returning value>();
+--chilComp.html > <button (click)="parentComponentfunctionname.emit(argument you want to pass)">update data</button>
+=================================================================
+pipes used to change data from one form to another
+like upperlower case,date format,currency change,
+to applue locales.
+pipes can be used only in html page
+===============================================================
+ng g c aboutus -s true --skip-tests true //skip style is spec.ts file.
+ng g m userrouting --routing //will create module with its own routing file.

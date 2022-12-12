@@ -25,7 +25,77 @@ Filter Type	Description	Built-in Filter	Interface
 	--Performs some operation before or after the execution of the view.	
 	--[OutputCache]	IResultFilter
 	
-3).Exception filters	
+4).Exception filters	
 	--Performs some operation if there is an unhandled exception 
 		thrown during the execution of the ASP.NET MVC pipeline.	
 	--[HandleError]	IExceptionFilter
+
+Web Api : can create Http based services.
+Rest : Representational State Transfer
+Rest Constraints:
+1).Client Server
+2).StateLess : should not store any client information on to the server.
+3).Cahable : Frequesnt response should be cached to avoi server roundtrips.
+4).Uniform interdace : HttpVerbs must be set properly with each requests.
+5).Layered System
+6).Code on demand(optional)
+=============
+Web api content negotiation
+============================
+1).Is one of standards of restful services,
+2).Client Form the server in which format Requesting data are posting 
+	and In Which Formate Responese data it want.
+3).Main header for  client want.
+	i). Accept:application/xml,application/json {Format of Responese data client want]
+	ii).contentType:application/xml,application/json [Format of Request data client sends]
+4).Qualityfactor : accept:application/xml;q=0.5,application/jsonq=0.4
+	will return data in format which have highest Qualityfactor.
+
+Difference between MVC and Web Api
+=======================================
+MVC - 
+1).Can be used to Web app, can return data,views
+2).Can returns data in json format by using jsonResult.
+3).mvc features like mvc,routing,modelbinding in "System.Web.MVC" assembly
+4).Request will be mapped based on actionname.
+5).not supports conventions based crud operation.
+6).Can manage state of data
+Web api 
+1).Can used only to generate http services that will return data only
+2).Can return data in various format like json,xml based on accept header
+3).includes mvc features like mvc,routing,modelbinding
+	but these features are different and defined in "System.Web.Http" assembly
+4).Request will be mapped based on HttpVerbs.	
+5).Supports conventions based crud operation.[Get,Post,Put,Delete]
+6).Rest is by design stateless.
+
+Include & ThenInclude in c#
+===========================
+Include & ThenInclude are entity framework methods 
+ex:_db.customers.include(c=>c.addresses).ThenInclude(ca=ca.adress).ToList();
+
+Select vs SelectMany in c#
+===========================
+Select : returns list of list<string>
+SelectMany : returns list of list<string> into single list
+ex: cutomer :[ 
+{id:101,name:'Ajay',Hobbies:['A','B','C']},
+{id:102,name:'Bhavin',Hobbies:['D','E','F']},
+{id:103,name:'Chetu',Hobbies:['G','H','I']} ]
+
+
+Include & ThenInclude are entity framework methods 
+ex:_db.customers.include(c=>c.addresses).ThenInclude(ca=ca.adress).ToList();
+
+Dependency Injection
+=====================
+--Dependency Injection is basically Providing the Requested object to 
+	the Requesting object instead of constructing the requested object 
+	by it self.
+--DI is a technique where by one object supplies the dependencies
+	of another object.
+3 Types of DIs
+===============
+1).Constructor injection
+2).Setter Or property injection
+3).Method Injection
