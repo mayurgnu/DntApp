@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DntAppApi.Infrastructure.Entities;
+namespace DntAppApi.Core.Entities;
 
 public partial class MstProduct
 {

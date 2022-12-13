@@ -109,3 +109,5 @@ pipes can be used only in html page
 ===============================================================
 ng g c aboutus -s true --skip-tests true //skip style is spec.ts file.
 ng g m userrouting --routing //will create module with its own routing file.
+=====================================================================================
+The encryption algorithm 'http://www.w3.org/2001/04/xmldsig-more#hmac-sha256' requires a key size of at least '128' bits. Key 

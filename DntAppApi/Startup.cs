@@ -1,4 +1,4 @@
-using DntAppApi.Infrastructure.Entities;
+using DntAppApi.Core;
 using DntAppApi.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -14,6 +14,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Text.Json.Serialization;
+using DntAppApi.Models;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using DntAppApi.Core.Entities;
 
 namespace DntAppApi
 {
@@ -38,7 +43,8 @@ namespace DntAppApi
 
             //Need To Add Service And implementation To Use In Our Application
             services.AddScoped<IProduct_Repository, Product_Repository>();
-
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
+            
             // Need To Add For Cross Origin Resourse Sharing Calls
             services.AddCors(options =>
             {
@@ -54,6 +60,33 @@ namespace DntAppApi
                     options.JsonSerializerOptions.PropertyNamingPolicy = null;
                     options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                 });
+
+            var appSettingsJsonSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSettings>(appSettingsJsonSection);
+            //JwtAuthentication
+            //1).secret key in appsettings
+            var appSettings = appSettingsJsonSection.Get<AppSettings>();
+            var Key = Encoding.ASCII.GetBytes(appSettings.Key);
+
+            //2).Add JwtBearerDefaults Authentication
+            services.AddAuthentication(au => { 
+                au.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                au.DefaultChallengeScheme= JwtBearerDefaults.AuthenticationScheme;
+            })
+            //3).Now Set JwtBearerDefaults Authentication Configuration.
+            .AddJwtBearer(jwt => {
+                jwt.SaveToken = true;
+                jwt.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    IssuerSigningKey = new SymmetricSecurityKey(Key),
+                    ValidateIssuerSigningKey = true
+                };
+            });
+
+            //3).Now Set JwtBearerDefaults Authentication Configuration.
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,6 +1,7 @@
 ﻿//using DntAppApi.Infrastructure.Entities;
+using DntAppApi.Core.Entities;
 using DntAppApi.Infrastructure;
-using DntAppApi.Infrastructure.Entities;
+using DntAppApi.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
