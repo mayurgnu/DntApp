@@ -1,0 +1,42 @@
+git checkout <branch name>
+git pull
+git rm -rf <folder name>
+git commit -m “<commit message>” 
+git push origin <branch name>
+
+E:/Int1/DntAppApi
+
+$ git rm -r --cached dir-name
+ex:- git rm -r --cached /DntAppApi/.vs -- not worked
+======================================================
+THIS WORKED...........
+======================================================
+PS E:\Int1> cd E:\Int1\DntAppApi
+PS E:\Int1\DntAppApi> git rm -r --cached .vs
+rm 'DntAppApi/.vs/DntAppApi/DesignTimeBuild/.dtbcache.v2'
+rm 'DntAppApi/.vs/DntAppApi/FileContentIndex/read.lock'
+rm 'DntAppApi/.vs/DntAppApi/config/applicationhost.config'
+rm 'DntAppApi/.vs/DntAppApi/v17/.futdcache.v2'
+rm 'DntAppApi/.vs/DntAppApi/v17/.suo'
+rm 'DntAppApi/.vs/ProjectEvaluation/dntappapi.metadata.v5.2'
+rm 'DntAppApi/.vs/ProjectEvaluation/dntappapi.projects.v5.2'
+PS E:\Int1\DntAppApi> git rm -r --cached bin
+PS E:\Int1\DntAppApi> git rm -r --cached obj
+======================================================
+git commit -m "<commit message>"
+ex: git commit -m "removed .vs, bin, obj folder"
+======================================================
+git push origin <branch name>
+ex: git push origin "master"
+output :
+========
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 305 bytes | 305.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/mayurgnu/DntApp.git
+887b691..6efe08f  master -> master
+PS E:\Int1\DntAppApi>
